@@ -1,0 +1,90 @@
+//=============================================================================
+//
+// LAUNCH AND RENAME THE WOW WINDOWS.
+// THIS IS FROM THE HOTKEYNET FORUMS.
+//
+
+// LaunchAndRename1.................LaunchAndRename2
+// %1% : PC to use......................%1% : PC to use
+// %2% : path to WoW..................%2% : path to WoW
+// %3% : name of the Window.........%3% : name of the Window
+// %4% : e-mail..........................%4% : x-pos
+// %5% : password......................%5% : y-pos
+//.........................................%6% : width
+//.........................................%7% : height
+//.........................................%8% : e-mail 
+//.........................................%9% : password
+<Command LaunchAndRename1>
+<SendPC %1%>
+<Run %2%>
+<wait 2000>
+<RenameTargetWin %3%>
+<wait 500>
+<text %4%> 
+<wait 200>
+<key Tab>
+<wait 200>
+<text %5%>
+<wait 200>
+<Key Enter>
+
+<Command LaunchAndRename2>
+<SendPC %1%>
+<Run %2%>
+<wait 2000>
+
+//<RenameTargetWin %3%> 
+<SetAffinity all>
+<SetWinRect %4% %5% %6% %7%>
+<wait 200>
+<text %8%> 
+<wait 200>
+<key Tab>
+<wait 200>
+<text %9%>
+<wait 200>
+<Key Enter>
+<RenameWin "World of Warcraft" %3%>
+
+
+//VANILLA WOW PATH: E:\World of Warcraft - Classic 1.12.1 (Stormrage)\WoW.exe
+//TBC WOW PATH: F:\WoW TBC 2.4.3\WoW.exe
+
+//-----------------------------------------------------------------------------
+// Ctrl-Alt-L launches 5 WoW windows. 1 main window + 4 alts
+//-----------------------------------------------------------------------------
+<Hotkey ScrollLockOn Ctrl Alt L>
+<LaunchAndRename2 local "F:\WoW TBC 2.4.3\WoW.exe" Leader 0 0 1920 1080 richesmullet ilovemxsx1>
+<LaunchAndRename2 local "F:\WoW TBC 2.4.3\WoW.exe" Char1 0 0 1920 1080 richesmullet2 ilovemxsx1>
+//-----------------------------------------------------------------------------
+// DEFINE MAIL LABELS FOR SENDING KEY STROKES 
+//-----------------------------------------------------------------------------
+<Label w0 local SendWinM Leader>
+<Label w1 local SendWinM Char1>
+
+//-----------------------------------------------------------
+// DEFINE HOTKEYS FOR ALL KEY COMBINATIONS THAT WILL GET
+// SENT TO ALL WOWS. ADD MORE KEY COMBO'S IF YOU WANT. 
+//-----------------------------------------------------------
+<KeyList MyKeys 0-9, E, F, G, T>
+<Hotkey ScrollLockOn MyKeys; ScrollLockOn Shift MyKeys; ScrollLockOn Shift Space>
+<SendLabel w0, w1>
+<Key %Trigger%>
+
+//-----------------------------------------------------------
+// DEFINE MOVEMENT KEYS THAT WILL GET SENT TO ALL WOW'S.
+// ADD MORE KEYS IF YOU WANT. 
+//-----------------------------------------------------------
+<MovementHotkey ScrollLockOn S, up, down, left, right>
+<SendLabel w0, w1>
+<Key %Trigger%>
+
+//-----------------------------------------------------------
+// BROADCAST MOUSE CLICKS. HOLD DOWN OEM3 (ON U.S. KEYBOARDS,
+// THAT'S THE SQUIGGLE KEY IN UPPPER LEFT CORNER, OEM5 ON EU KEYBOARDS) WHEN YOU 
+// WANT TO BROADCAST.
+//-----------------------------------------------------------
+<UseKeyAsModifier Oem3> 
+<Hotkey ScrollLockOn Oem3 LButton, MButton, RButton, Button4, Button5>
+<SendLabel w0, w1>
+      <ClickMouse %TriggerMainKey%>
