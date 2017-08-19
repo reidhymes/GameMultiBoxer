@@ -1,0 +1,110 @@
+-------------------------------------------------------------------------------------
+HotkeyNet Log File
+-------------------------------------------------------------------------------------
+
+File opened at 17:17:14 on Tuesday, August 15, 2017
+DNS name: DESKTOP-BDH91NM
+OS version: Microsoft  (build 9200)
+
+
+CPU:
+	Archictecture = 0; 
+	Page size = 1000; 
+	Min app address = 10000; 
+	Max app address = 7ffeffff; 
+	Mask = fff; 
+	Qty cores = 12; 
+	Type = 24a; 
+	Alloc granularity = 10000; 
+	Level = 6; 
+	Revision = 3f02.
+
+
+Memory:
+	Load = 61%; 
+	Total physical = 16279 MB; 
+	Available physical = 6203 MB; 
+	Total page file = 18711 MB; 
+	Avail page file = 5112 MB; 
+	Total virtual = 2047 MB; 
+	Avail virtual = 1958 MB; 
+	Avail extended virtual = 0 MB.
+
+
+Mouse:
+	Mouse installed.
+	Buttons not swapped.
+	Speed: 0
+	Threshold (x,y): 0,0
+
+
+Adapter 0:
+
+	IP Address	0.0.0.0
+	Subnet Mask	0.0.0.0
+	Default Gateway	0.0.0.0
+
+	Adapter Name	{EAA1BAC8-F471-4522-B5D1-0A9B0DC24617}
+	Description	TAP-Win32 Adapter V9 (Tunngle)
+	Physical Address	00-FF-EA-A1-BA-C8
+
+	DHCP Enabled	Yes
+	DHCP Server	
+	Lease Obtained	Wed Dec 31 16:00:00 1969
+
+	Have WINS	No
+
+Adapter 1:
+
+	IP Address	192.168.1.19
+	Subnet Mask	255.255.255.0
+	Default Gateway	192.168.1.1
+
+	Adapter Name	{6AD5B74E-2CF2-4108-ACC8-26F863C658B1}
+	Description	Qualcomm Atheros AR938x Wireless Network Adapter
+	Physical Address	E8-94-F6-27-C5-08
+
+	DHCP Enabled	Yes
+	DHCP Server	192.168.1.1
+	Lease Obtained	Tue Aug 15 08:19:19 2017
+
+	Have WINS	No
+
+Adapter 2:
+
+	IP Address	0.0.0.0
+	Subnet Mask	0.0.0.0
+	Default Gateway	0.0.0.0
+
+	Adapter Name	{6F21787B-F729-4CD3-BB05-AED3FDF3AA63}
+	Description	Microsoft Hosted Network Virtual Adapter
+	Physical Address	5A-94-F6-27-C5-08
+
+	DHCP Enabled	Yes
+	DHCP Server	
+	Lease Obtained	Wed Dec 31 16:00:00 1969
+
+	Have WINS	No
+
+Adapter 3:
+
+	IP Address	0.0.0.0
+	Subnet Mask	0.0.0.0
+	Default Gateway	0.0.0.0
+
+	Adapter Name	{93EFB159-D209-42A9-A7CC-1990012B4795}
+	Description	Microsoft Wi-Fi Direct Virtual Adapter
+	Physical Address	1A-94-F6-27-C5-08
+
+	DHCP Enabled	Yes
+	DHCP Server	
+	Lease Obtained	Wed Dec 31 16:00:00 1969
+
+	Have WINS	No
+
+HotkeyNet 0.1.45 build 210
+Start as server.
+This IP: 192.168.1.19
+
+C:\d\sou\cpp\macro\cAuth.cpp 423: IP seen by authorization server: 67.182.142.38
+

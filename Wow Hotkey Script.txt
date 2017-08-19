@@ -54,8 +54,8 @@
 // Ctrl-Alt-L launches 5 WoW windows. 1 main window + 4 alts
 //-----------------------------------------------------------------------------
 <Hotkey ScrollLockOn Ctrl Alt L>
-<LaunchAndRename2 local "F:\WoW TBC 2.4.3\WoW.exe" Leader 0 0 1920 1080 richesmullet ilovemxsx1>
-<LaunchAndRename2 local "F:\WoW TBC 2.4.3\WoW.exe" Char1 0 0 1920 1080 richesmullet2 ilovemxsx1>
+<LaunchAndRename2 local "F:\WoW TBC 2.4.3\WoW.exe" Leader 0 0 1920 1080 account password>
+<LaunchAndRename2 local "F:\WoW TBC 2.4.3\WoW.exe" Char1 0 0 1920 1080 account password>
 //-----------------------------------------------------------------------------
 // DEFINE MAIL LABELS FOR SENDING KEY STROKES 
 //-----------------------------------------------------------------------------
