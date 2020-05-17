@@ -19,6 +19,7 @@
 
 <Key Enter>
 <RenameWin "World of Warcraft" %2%>
+// End the definition of the command.
 
 // Set the Ctrl-Alt-L keybind to run the following command to launch all WoW windows.
 <Hotkey ScrollLockOn Ctrl Alt L>
@@ -29,7 +30,7 @@
  
 <Label w1 local SendWinM Window1Name>
 <Label w2 local SendWinM Window2Name>
-// End the definition of the command.
+
 
 // Define hotkeys for all key press combos that get sent to all windows.
 // Add more combos here if you want.
