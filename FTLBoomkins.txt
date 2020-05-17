@@ -1,0 +1,104 @@
+// start the definition of the command.
+<Command OpenRenameWindowAndLogin>
+<SendPC local>
+<Run %1%>
+<wait 1000>
+
+<SetAffinity all>
+<SetWinRect %3% %4% %5% %6%>
+<wait 200>
+
+<text %7%> 
+<wait 200>
+
+<key Tab>
+<wait 200>
+
+<text %8%>
+<wait 200>
+
+<Key Enter>
+<RenameWin "World of Warcraft" %2%>
+
+//----------------------------------------------------------
+// 	WoW RESIZE AND POSITION
+//----------------------------------------------------------
+<Command ResizeAndPosition>
+	<SendPC Local>
+		<SendWinM %1%>
+			<SetWinRect 0 0 2560 1440>
+      <TargetWin %1%>
+      <SetFocusWin>              
+		<SendWinM %2%>
+			<SetWinRect 0 0 2560 1440>
+		<SendWinM %3%>
+			<SetWinRect 0 0 2560 1440>     
+		<SendWinM %4%>
+			<SetWinRect 0 0 2560 1440>
+		<SendWinM %5%>
+			<SetWinRect 0 0 2560 1440>
+
+//-----------------------------------------------------------
+// DEFINE MAIL LABELS FOR SENDING KEY STROKES
+//-----------------------------------------------------------
+<Label w1 Local SendWinM WoW1>
+<Label w2 Local SendWinM WoW2>
+<Label w3 Local SendWinM WoW3>
+<Label w4 Local SendWinM WoW4>
+<Label w5 Local SendWinM WoW5>
+
+//-----------------------------------------------------------
+// DEFINE HOTKEYS FOR ALL KEY COMBINATIONS THAT WILL GET
+// SENT TO BOTH WOWS. ADD MORE KEY COMBO'S IF YOU WANT.
+//-----------------------------------------------------------
+<Hotkey ScrollLockOn A-Z, 1-6, Plus, Space, F1-F12 except W, A, S, D, Q, E>
+<SendLabel w1, w2, w3, w4, w5>
+<Key %Trigger%>
+
+//-----------------------------------------------------------
+// DEFINE MOVEMENT KEYS THAT WILL GET SENT TO BOTH WOW'S.
+// ADD MORE KEYS IF YOU WANT.
+//-----------------------------------------------------------
+<MovementHotkey ScrollLockOn up, down, left, right>
+<SendLabel w1, w2, w3, w4, w5>
+<Key %Trigger%>
+
+//-----------------------------------------------------------
+// BROADCAST MOUSE CLICKS. HOLD DOWN OEM3 (ON U.S. KEYBOARDS,
+// THAT'S THE SQUIGGLE KEY IN UPPPER LEFT CORNER) WHEN YOU
+// WANT TO BROADCAST.
+//-----------------------------------------------------------
+<UseKeyAsModifier Oem3>
+
+<Hotkey ScrollLockOn Oem3 LButton, MButton, RButton, Button4, Button5>
+   <SendLabel w1, w2, w3, w4, w5>
+      <ClickMouse %TriggerMainKey%>
+
+//----------------------------------------------------------
+//				WINDOW SWAPPING
+//----------------------------------------------------------					
+//*	 Window Swapping
+<Hotkey ScrollLockOn 7>
+   <SendLabel w1, w2, w3, w4, w5>
+   <Key %Trigger%>
+	<ResizeAndPosition WoW1 WoW2 WoW3 WoW4 WoW5>
+
+<Hotkey ScrollLockOn 8>
+   <SendLabel w1, w2, w3, w4, w5>
+   <Key %Trigger%>
+	<ResizeAndPosition WoW2 WoW1 WoW3 WoW4 WoW5>
+
+<Hotkey ScrollLockOn 9>
+   <SendLabel w1, w2, w3, w4, w5>
+   <Key %Trigger%>
+	<ResizeAndPosition WoW3 WoW2 WoW1 WoW4 WoW5>
+
+<Hotkey ScrollLockOn 0>
+   <SendLabel w1, w2, w3, w4, w5>
+   <Key %Trigger%>
+	<ResizeAndPosition WoW4 WoW2 WoW3 WoW1 WoW5>
+
+<Hotkey ScrollLockOn minus>
+   <SendLabel w1, w2, w3, w4, w5>
+   <Key %Trigger%>
+	<ResizeAndPosition WoW5 WoW2 WoW3 WoW4 WoW1>
