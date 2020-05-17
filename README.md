@@ -14,10 +14,10 @@ How to run the Script
   	4) Profit.
  
  Keybinds include:
- 	* 0-9, E, F, G, T
-	* S, up, down, left, right
-	* Tilde toggles these clicks to occur on all windows:
-	* LButton, MButton, RButton, Button4, Button5
+ * 0-9, E, F, G, T
+* S, up, down, left, right
+* Tilde toggles these clicks to occur on all windows:
+* LButton, MButton, RButton, Button4, Button5
 
 How to spawn more windows
 -------------------------
