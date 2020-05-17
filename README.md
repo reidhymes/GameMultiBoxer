@@ -11,8 +11,13 @@ How to run the Script
 	1) Load script -> This file
 	2) Turn Scroll Lock on to enable all keybinds. Turn Scroll Lock off to disable all keybinds.
 	3) Press CTRL + ALT + L to launch the two windows.
-  4) Profit.
+  	4) Profit.
  
+ Keybinds include:
+ 	0-9, E, F, G, T
+	S, up, down, left, right
+	Tilde toggles these clicks to occur on all windows:
+	LButton, MButton, RButton, Button4, Button5
 
 How to spawn more windows
 -------------------------
