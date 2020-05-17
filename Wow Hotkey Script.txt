@@ -1,90 +1,109 @@
+// How to use. Some of the in here is from the Hotkeynet forums.
+//
+// Keep scroll lock on to enable keybindings otherwise turn it off to get disable the keybinds and
+// get normal keyboard control back.
+//
+// How to run the Script
+// ---------------------
+//
+//	1) Load script -> This file
+//	2) Turn Scroll Lock on to enable all keybinds. Turn Scroll Lock off to disable all keybinds.
+//	2) Press CTRL + ALT + L to launch the two windows.
+//	3) Profit.
+// 
+//
+// How to spawn more windows
+// -------------------------
+//
+//	1) Copy this line:
+//			<OpenWowAndRenameWindow local "Drive:\Path\To\WoW.exe" windowname 0 0 1920 1080 acountName password>
+//
+//  2) Change the file path to point to your wow executable.
+//  3) The next parameter is the name to rename the window to.
+//  4) Change the top left pixel position to start drawing the the window.
+//  5) The width and height of the window in pixels.
+//  6) Your account name to login with.
+//  7) Your password to login with.
+//
+//  8) After you do the above you'll want to update the rest of the script to send your keybinds to
+//     this new window.
+//     Do this by copying this line:
+//			<Label w0 local SendWinM windowname>
+//
+//  9) Change "w0" to a new unique name. This name will be used in the rest of the script to refert
+//     to when you want to send keybinds to that window.
+//  10) Change "windowname" to the name of your window from step 3.
+//  11) Then search for where this script calls "SendLabel" and add the name from step 9 to the list inside the brackets.
+//  12) Save the file, press Reload Script in HotKeyNet.
+//  13) Profit with your new multibox window.
+//
 //=============================================================================
+
+// Defines the function to open a single World of Warcraft window, rename it, and login use the
+// account name and password below. This uses the wow executable at the given path. You can
+// control where the window is drawn by changing the x and y position of the top left corner
+// of the window and changing the width and height pixel values. Using some wow executable at a 
+// directory path wow and rename the window.
 //
-// LAUNCH AND RENAME THE WOW WINDOWS.
-// THIS IS FROM THE HOTKEYNET FORUMS.
-//
+// %1% : path to the wow executable to start.
+// %2% : Name to rename the wow window. This is important to differentiate what windows to send commands to.
+// %3% : The position in x-axis of the top left point to start drawing the window on the screen in pixels.
+// %4% : The position in y-axis of the top left point to start drawing the window on the screen in
+//       pixels. (i.e. 0 mean top left corner of the screen. You can also draw windows on a second monitor
+//       by setting this value to something greater than the resolution of your primary display).
+// %5% : Width of the window to start in pixels.
+// %6% : Height of the window to start in pixels.
+// %7% : Account name to type into the login window.
+// %8% : Passowrd in plain text to type into the login window.
+<Command OpenRenameWindowAndLogin>
+<SendPC local>
+<Run %1%>
+<wait 1000>
 
-// LaunchAndRename1.................LaunchAndRename2
-// %1% : PC to use......................%1% : PC to use
-// %2% : path to WoW..................%2% : path to WoW
-// %3% : name of the Window.........%3% : name of the Window
-// %4% : e-mail..........................%4% : x-pos
-// %5% : password......................%5% : y-pos
-//.........................................%6% : width
-//.........................................%7% : height
-//.........................................%8% : e-mail 
-//.........................................%9% : password
-<Command LaunchAndRename1>
-<SendPC %1%>
-<Run %2%>
-<wait 2000>
-<RenameTargetWin %3%>
-<wait 500>
-<text %4%> 
-<wait 200>
-<key Tab>
-<wait 200>
-<text %5%>
-<wait 200>
-<Key Enter>
-
-<Command LaunchAndRename2>
-<SendPC %1%>
-<Run %2%>
-<wait 2000>
-
-//<RenameTargetWin %3%> 
 <SetAffinity all>
-<SetWinRect %4% %5% %6% %7%>
+<SetWinRect %3% %4% %5% %6%>
 <wait 200>
-<text %8%> 
+
+<text %7%> 
 <wait 200>
+
 <key Tab>
 <wait 200>
-<text %9%>
+
+<text %8%>
 <wait 200>
+
 <Key Enter>
-<RenameWin "World of Warcraft" %3%>
+<RenameWin "World of Warcraft" %2%>
 
-
-//VANILLA WOW PATH: E:\World of Warcraft - Classic 1.12.1 (Stormrage)\WoW.exe
-//TBC WOW PATH: F:\WoW TBC 2.4.3\WoW.exe
-
-//-----------------------------------------------------------------------------
-// Ctrl-Alt-L launches 5 WoW windows. 1 main window + 4 alts
-//-----------------------------------------------------------------------------
+// Set the Ctrl-Alt-L keybind to run the following command to launch all WoW windows.
 <Hotkey ScrollLockOn Ctrl Alt L>
-<LaunchAndRename2 local "F:\WoW TBC 2.4.3\WoW.exe" Leader 0 0 1920 1080 account password>
-<LaunchAndRename2 local "F:\WoW TBC 2.4.3\WoW.exe" Char1 0 0 1920 1080 account password>
-//-----------------------------------------------------------------------------
-// DEFINE MAIL LABELS FOR SENDING KEY STROKES 
-//-----------------------------------------------------------------------------
-<Label w0 local SendWinM Leader>
-<Label w1 local SendWinM Char1>
 
-//-----------------------------------------------------------
-// DEFINE HOTKEYS FOR ALL KEY COMBINATIONS THAT WILL GET
-// SENT TO ALL WOWS. ADD MORE KEY COMBO'S IF YOU WANT. 
-//-----------------------------------------------------------
+// Draw 2 windows in 2k resolution horizontally splitting the screen
+<OpenRenameWindowAndLogin "Drive:\Path\To\WoW.exe" Window0Name 1280 0 1280 700 account1 password1>
+<OpenRenameWindowAndLogin "Drive:\Path\To\WoW.exe" Window1Name 0 0 1280 700 account2 password2>
+ 
+<Label w0 local SendWinM Window0Name>
+<Label w1 local SendWinM Window1Name>
+
+
+// Define hotkeys for all key press combos that get sent to all windows.
+// Add more combos here if you want.
 <KeyList MyKeys 0-9, E, F, G, T>
-<Hotkey ScrollLockOn MyKeys; ScrollLockOn Shift MyKeys; ScrollLockOn Shift Space>
-<SendLabel w0, w1>
+<Hotkey ScrollLockOn MyKeys; ScrollLockOn Shift MyKeys; ScrollLockOn Shift Space; ScrollLockOn Space>
+<SendLabel w0, w1, w2, w3, w4>
 <Key %Trigger%>
 
-//-----------------------------------------------------------
-// DEFINE MOVEMENT KEYS THAT WILL GET SENT TO ALL WOW'S.
-// ADD MORE KEYS IF YOU WANT. 
-//-----------------------------------------------------------
+// Define movement keys that will get sent to all windows.
+// Add more combos here if you want.
 <MovementHotkey ScrollLockOn S, up, down, left, right>
-<SendLabel w0, w1>
+<SendLabel w0, w1, w2, w3, w4>
 <Key %Trigger%>
 
-//-----------------------------------------------------------
-// BROADCAST MOUSE CLICKS. HOLD DOWN OEM3 (ON U.S. KEYBOARDS,
-// THAT'S THE SQUIGGLE KEY IN UPPPER LEFT CORNER, OEM5 ON EU KEYBOARDS) WHEN YOU 
-// WANT TO BROADCAST.
-//-----------------------------------------------------------
-<UseKeyAsModifier Oem3> 
+// Hold down tilde when you want to send mouse clicks to all windows.
+// This could probably be better, but mouse operations are not intuitive unless
+// you're clicking UI elements that are at the same pixel on every screen.
+<UseKeyAsModifier Oem3>
 <Hotkey ScrollLockOn Oem3 LButton, MButton, RButton, Button4, Button5>
-<SendLabel w0, w1>
-      <ClickMouse %TriggerMainKey%>
+<SendLabel w0, w1, w2, w3, w4>
+<ClickMouse %TriggerMainKey%>
