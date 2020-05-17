@@ -25,8 +25,7 @@ How to spawn more windows
  5) The width and height of the window in pixels.
  6) Your account name to login with.
  7) Your password to login with.
-
-8) After you do the above you'll want to update the rest of the script to send your keybinds to
+ 8) After you do the above you'll want to update the rest of the script to send your keybinds to
     this new window.
     Do this by copying this line:
   		<Label w0 local SendWinM windowname>
@@ -38,11 +37,13 @@ How to spawn more windows
  12) Save the file, press Reload Script in HotKeyNet.
  13) Profit with your new multibox window.
 
-Defines the function to open a single World of Warcraft window, rename it, and login use the
-account name and password below. This uses the wow executable at the given path. You can
-control where the window is drawn by changing the x and y position of the top left corner
-of the window and changing the width and height pixel values. Using some wow executable at a 
-directory path wow and rename the window.
+OpenRenameWindowAndLogin Command
+--------------------------------
+The command in the file defines the function to open a single World of Warcraft window, rename
+it, and login use the account name and password below. This uses the wow executable at the
+given path. You can control where the window is drawn by changing the x and y position of the
+top left corner of the window and changing the width and height pixel values. Using some wow
+executable at a directory path wow and rename the window.
 
 %1% : path to the wow executable to start.
 %2% : Name to rename the wow window. This is important to differentiate what windows to send commands to.
