@@ -24,24 +24,24 @@
 <Hotkey ScrollLockOn Ctrl Alt L>
 
 // Draw 2 windows in 2k resolution horizontally splitting the screen
-<OpenRenameWindowAndLogin "Drive:\Path\To\WoW.exe" Window0Name 1280 0 1280 700 account1 password1>
-<OpenRenameWindowAndLogin "Drive:\Path\To\WoW.exe" Window1Name 0 0 1280 700 account2 password2>
+<OpenRenameWindowAndLogin "Drive:\Path\To\WoW.exe" Window1Name 1280 0 1280 700 account1 password1>
+<OpenRenameWindowAndLogin "Drive:\Path\To\WoW.exe" Window222Name 0 0 1280 700 account2 password2>
  
-<Label w0 local SendWinM Window0Name>
 <Label w1 local SendWinM Window1Name>
+<Label w2 local SendWinM Window2Name>
 // End the definition of the command.
 
 // Define hotkeys for all key press combos that get sent to all windows.
 // Add more combos here if you want.
 <KeyList MyKeys 0-9, E, F, G, T>
 <Hotkey ScrollLockOn MyKeys; ScrollLockOn Shift MyKeys; ScrollLockOn Shift Space; ScrollLockOn Space>
-<SendLabel w0, w1, w2, w3, w4>
+<SendLabel w1, w2>
 <Key %Trigger%>
 
 // Define movement keys that will get sent to all windows.
 // Add more combos here if you want.
 <MovementHotkey ScrollLockOn S, up, down, left, right>
-<SendLabel w0, w1, w2, w3, w4>
+<SendLabel w1, w2>
 <Key %Trigger%>
 
 // Hold down tilde when you want to send mouse clicks to all windows.
@@ -49,5 +49,5 @@
 // you're clicking UI elements that are at the same pixel on every screen.
 <UseKeyAsModifier Oem3>
 <Hotkey ScrollLockOn Oem3 LButton, MButton, RButton, Button4, Button5>
-<SendLabel w0, w1, w2, w3, w4>
+<SendLabel w1, w2>
 <ClickMouse %TriggerMainKey%>
