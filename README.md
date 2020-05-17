@@ -14,10 +14,10 @@ How to run the Script
   	4) Profit.
  
  Keybinds include:
- 	0-9, E, F, G, T
-	S, up, down, left, right
-	Tilde toggles these clicks to occur on all windows:
-	LButton, MButton, RButton, Button4, Button5
+ 	* 0-9, E, F, G, T
+	* S, up, down, left, right
+	* Tilde toggles these clicks to occur on all windows:
+	* LButton, MButton, RButton, Button4, Button5
 
 How to spawn more windows
 -------------------------
@@ -50,14 +50,14 @@ given path. You can control where the window is drawn by changing the x and y po
 top left corner of the window and changing the width and height pixel values. Using some wow
 executable at a directory path wow and rename the window.
 
-%1% : path to the wow executable to start.
-%2% : Name to rename the wow window. This is important to differentiate what windows to send commands to.
-%3% : The position in x-axis of the top left point to start drawing the window on the screen in pixels.
-%4% : The position in y-axis of the top left point to start drawing the window on the screen in
+* %1% : path to the wow executable to start.
+* %2% : Name to rename the wow window. This is important to differentiate what windows to send commands to.
+* %3% : The position in x-axis of the top left point to start drawing the window on the screen in pixels.
+* %4% : The position in y-axis of the top left point to start drawing the window on the screen in
       pixels. (i.e. 0 mean top left corner of the screen. You can also draw windows on a second monitor
       by setting this value to something greater than the resolution of your primary display).
-%5% : Width of the window to start in pixels.
-%6% : Height of the window to start in pixels.
-%7% : Account name to type into the login window.
-%8% : Passowrd in plain text to type into the login window.
+* %5% : Width of the window to start in pixels.
+* %6% : Height of the window to start in pixels.
+* %7% : Account name to type into the login window.
+* %8% : Passowrd in plain text to type into the login window.
 
